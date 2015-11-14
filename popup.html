@@ -4,14 +4,15 @@
     <title>Cookie Factory</title>
     <script src="urlToCookie.js"></script>
     <script src="stringConvert.js"></script>
+    <script src="eventListenerAdder.js"></script>
   </head>
   <body>
     URL:
     <input type="text" id="url"/>
     Cookie data:
     <input type="text" id="cookieData"/>
-    <input type="button" id="getCookies" onclick="urlToCookie(document.getElementById('url').value)"/>
-    <input type="button" id="setCookies" onclick="setCookie(document.getElementById('url').value, document.getElementById('cookieData').value)"/>
+    <input type="button" value="get" id="getCookies"/>
+    <input type="button" value="set" id="setCookies"/>
   </body>
 </html>
 

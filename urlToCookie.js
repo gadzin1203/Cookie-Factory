@@ -1,5 +1,4 @@
 function urlToCookie(domain) {
-	var x;
 	chrome.cookies.getAll({"url": domain}, function (cookielist) {
 		document.getElementByID('cookieData').value = toString(cookielist);
 	}); 
