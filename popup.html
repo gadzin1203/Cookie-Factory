@@ -7,11 +7,15 @@
 <html>
   <head>
     <title>Cookie Factory</title>
-
-    <!--<script src="popup.js"></script>-->
+    <script src="urlToCookie.js"></script>
   </head>
   <body>
-    Hello, world!
+    URL:
+    <input type="text" id="url"/>
+    Cookie data:
+    <input type="text" id="cookieData"/>
+    <input type="button" id="getCookies" onclick="urlToCookie(document.getElementById('url').value)"/>
+    <input type="button" id="setCookies" onclick="setCookie(document.getElementById('url').value, document.getElementById('cookieData').value)"/>
   </body>
 </html>
 
