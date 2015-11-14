@@ -1,13 +1,25 @@
 function urlToCookie(domain) {
-	chrome.cookies.getAll({"url": domain}, function (cookielist) {
-		document.getElementByID('cookieData').value = toString(cookielist);
+  console.log(domain);
+	chrome.cookies.getAll({"domain" : domain}, function (cookielist) {
+    console.log(cookielist);
+		document.getElementById('cookieData').value = toString(cookielist);
 	}); 
 };
 
-function setCookie(domain, cookiedata) {
+function setCookie(url, cookiedata) {
   var cookies = fromString(cookiedata);
   for (var i = 0; i < cookies.length; i++) {
-    chrome.cookies.set(cookies[i]);
+    var screened = {
+      "url" : url,
+      "name" : cookies[i].name,
+      "value" : cookies[i].value,
+      "domain" : cookies[i].domain,
+      "path" : cookies[i].path,
+      "secure" : cookies[i].secure,
+      "expirationDate" : cookies[i].expirationDate,
+      "storeId" : cookies[i].storeId
+    };
+    chrome.cookies.set(screened);
   }
 }
 

@@ -1,8 +1,8 @@
 function toString(cookies) {
-  JSON.stringify(cookies)
+  return JSON.stringify(cookies);
 }
 
 function fromString(strings) {
-  return JSON.parse(strings)
+  return JSON.parse(strings);
 }
 
